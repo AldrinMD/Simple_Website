@@ -9,38 +9,38 @@ auth = Blueprint('auth', __name__)
 @auth.route('/reg', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        signup_email = request.form.get('signup_email').lower()
-        signup_firstName = request.form.get('signup_firstName').lower()
-        signup_lastName = request.form.get('signup_lastName').lower()
-        signup_password = request.form.get('signup_password')
-        signup_confirmPassword = request.form.get('signup_confirmPassword')
+        register_email = request.form.get('register_email').lower()
+        register_firstName = request.form.get('register_firstName').lower()
+        register_lastName = request.form.get('register_lastName').lower()
+        register_password = request.form.get('register_password')
+        register_confirmPassword = request.form.get('register_confirmPassword')
 
-        user = User.query.filter_by(email = signup_email).first()
+        user = User.query.filter_by(email = register_email).first()
 
         if user:
             flash('Email already exists.', category='error')
-        elif len(signup_email) < 5:
+        elif len(register_email) < 5:
             flash('Email must be greater than 5 characters. Please try again.', category='error')
-        elif len(signup_firstName) < 2:
+        elif len(register_firstName) < 2:
             flash('First name must be greater than 2 characters. Please try again.', category='error')
-        elif len(signup_lastName) < 2:
+        elif len(register_lastName) < 2:
             flash('Last name must be greater than 2 characters. Please try again.', category='error')
-        elif len(signup_password) < 6:
+        elif len(register_password) < 6:
             flash('Password must be greater than 6 characters. Please try again.', category='error') 
-        elif not any(char.isdigit() for char in signup_password):
+        elif not any(char.isdigit() for char in register_password):
             flash('Password must contain a number. Please try again.', category='error') 
-        elif not any(char.isupper() for char in signup_password):
+        elif not any(char.isupper() for char in register_password):
             flash('Password must contain a capital letter. Please try again.', category='error') 
-        elif signup_password != signup_confirmPassword:
+        elif register_password != register_confirmPassword:
             flash('Password doesn\'t match. Please try again.', category='error')
         else:
-            new_User = User(email = signup_email, first_name = signup_firstName, last_name = signup_lastName, password = generate_password_hash(signup_password, method="sha256"))
+            new_User = User(email = register_email, first_name = register_firstName, last_name = register_lastName, password = generate_password_hash(register_password, method="sha256"))
             database.session.add(new_User)
             database.session.commit()
 
-            user = User.query.filter_by(email = signup_email).first()
+            user = User.query.filter_by(email = register_email).first()
             if user:
-                if check_password_hash(user.password, signup_password):
+                if check_password_hash(user.password, register_password):
 
                     flash('Account successfully created', category='success')
                     return redirect(url_for('views.home'))

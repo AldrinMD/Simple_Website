@@ -1,0 +1,107 @@
+/* Card / Form positioning */
+.reg-login-card {
+    margin: auto;
+    width: 50%;
+    padding-top: 5%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin: auto;
+}
+
+/* Title properties + position */
+.title-center {
+    display: flex;
+    margin: auto;
+}
+
+.reg-login-title {
+font-size: 28px;
+color: grey;
+font-weight: 600;
+letter-spacing: -1px;
+position: relative;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+/* Flex display property of First and Last name */
+.flex {
+display: flex;
+width: 100%;
+gap: 6px;
+}
+
+/* Input properties + animation */
+.form label {
+position: relative;
+}
+  
+.form label .input {
+width: 100%;
+padding: 10px 10px 20px 10px;
+outline: 0;
+border: 1px solid rgba(105, 105, 105, 0.397);
+border-radius: 10px;
+}
+  
+.form label .input + span {
+position: absolute;
+left: 10px;
+top: 15px;
+color: grey;
+font-size: 0.9em;
+cursor: text;
+transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.form label .input:placeholder-shown + span {
+top: 15px;
+font-size: 0.9em;
+}
+  
+.form label .input:focus + span,.form label .input:valid + span {
+top: 30px;
+font-size: 0.7em;
+font-weight: 600;
+}
+
+/* Submit properties + animation */
+.submit {
+border: none;
+outline: none;
+background-color: grey;
+padding: 10px;
+border-radius: 10px;
+color: #fff;
+font-size: 16px;
+transform: .3s ease;
+}
+  
+.submit:hover {
+background-color: darkgray;
+}
+
+/*  */
+.reg-login-bot-msg {
+    text-align: center;
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 14px;
+    }
+    
+.reg-login-bot-msg a {
+color: darkgray;
+}
+    
+.reg-login-bot-msg a:hover {
+text-decoration: white;
+}

@@ -1,47 +1,41 @@
-{% extends "masterpage.html" %} {% block title %}Sign up{% endblock %}
+{% extends "masterpage.html" %} {% block title %}Register{% endblock %}
 
 {% block content %}
-<div class="card">
-    <div class="card-body">
-        <form class="row g-3" method="POST">
-            <h3 align="center">Sign Up</h3>
-        
-            <div class="form-group col-12">
-                <label for="signup_email">Email Address</label>
-                <input type="email" class="form-control" id="signup_email" name="signup_email" placeholder="Enter email" value="{{ request.form['signup_email'] }}"/>    
-            </div>
-        
-            <div class="form-group col-md-6">
-                <label for="signup_firstName">First Name</label>
-                <input type="text" class="form-control" id="signup_firstName" name="signup_firstName" placeholder="Enter First name" value="{{ request.form['signup_firstName'] }}"/>    
-            </div>
-        
-            <div class="form-group col-md-6">
-                <label for="signup_lastName">Last Name</label>
-                <input type="text" class="form-control" id="signup_lastName" name="signup_lastName" placeholder="Enter Last name" value="{{ request.form['signup_lastName'] }}"/>    
-            </div>
-        
-            <div class="form-grou col-md-6">
-                <label for="signup_password">Password</label>
-                <input type="password" class="form-control" id="signup_password" name="signup_password" placeholder="Enter Password"/>    
-            </div>
-        
-            <div class="form-grou col-md-6">
-                <label for="signup_confirmPassword">Confirm Password</label>
-                <input type="password" class="form-control" id="signup_confirmPassword" name="signup_confirmPassword" placeholder="Confirm Password"/>
-            </div>   
-        
-            <br/>
+<div class="reg-login-card">
+    <form class="form" method="POST">
+        <div class="title-center">
+            <p class="reg-login-title">Register</p>
+        </div>
 
-            <div class="d-grid col-6 mx-auto">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+        <div class="flex">
+            <label>
+                <input type="text" class="input" id="register_firstName" name="register_firstName" placeholder="" value="{{ request.form['register_firstName'] }}" required="">
+                <span>First name</span>
+            </label>
 
-        </form>
-    </div>
+            <label>
+                <input type="text" class="input" id="register_lastName" name="register_lastName" placeholder="" value="{{ request.form['register_lastName'] }}" required="">
+                <span>Last name</span>
+            </label>
+        </div>  
+                
+        <label>
+            <input type="email" class="input" id="register_email" name="register_email" placeholder="" value="{{ request.form['register_email'] }}" required="">
+            <span>Email</span>
+        </label> 
+            
+        <label>
+            <input type="password" class="input" id="register_password" name="register_password" placeholder="" required="">
+            <span>Password</span>
+        </label>
+        <label>
+            <input type="password" class="input" id="register_confirmPassword" name="register_confirmPassword" placeholder="" required="">
+            <span>Confirm password</span>
+        </label>
 
+        <button class="submit">Submit</button>
+        <p class="reg-login-bot-msg">Already have an acount? <a href="/login">Sign in</a> </p>
+    </form>
 </div>
-
-
 
 {% endblock %}

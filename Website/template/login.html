@@ -1,22 +1,25 @@
 {% extends "masterpage.html" %} {% block title %}Login{% endblock %}
 
 {% block content %}
-<form method="POST">
-    <h3 align="center">Login</h3>
+<div class="reg-login-card">
+    <form class="form" method="POST">
+        <div class="title-center">
+            <p class="reg-login-title">Login</p>
+        </div> 
+                
+        <label>
+            <input type="email" class="input" id="login_email" name="login_email" placeholder="" value="{{ request.form['login_email'] }}" required="">
+            <span>Email</span>
+        </label> 
+            
+        <label>
+            <input type="password" class="input" id="login_password" name="login_password" placeholder="" required="">
+            <span>Password</span>
+        </label>
 
-    <div class="form-group">
-        <label for="login_email">Email Address</label>
-        <input type="email" class="form-control" id="login_email" name="login_email" placeholder="Enter email" value="{{ request.form['login_email'] }}"/>    
-    </div>
+        <button class="submit">Login</button>
+        <p class="reg-login-bot-msg">Don't have an acount? <a href="/reg">Register</a> </p>
+    </form>
+</div>
 
-    <div class="form-group">
-        <label for="login_password">Password</label>
-        <input type="password" class="form-control" id="login_password" name="login_password" placeholder="Enter Password"/>    
-    </div> 
-
-<br/>
-
-<button type="submit" class="btn btn-primary">Login</button>
-
-</form>
 {% endblock %}

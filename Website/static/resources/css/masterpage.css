@@ -1,7 +1,31 @@
 body {
     background-color: lightgray;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.alert-center {
+    margin: auto;
+    width: 50%;
+    align-items: center;
+}
+
+.alert-content-center {
+    text-align: center;
+    height: 10px;
 }
 
 .custom-spacer {
     height: 20px;
+}
+
+.nav-ul-padding {
+    padding-right: 17px;
+}
+
+footer {
+    margin-top: auto;
+
 }
