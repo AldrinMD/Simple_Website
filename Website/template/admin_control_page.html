@@ -1,0 +1,24 @@
+{% extends "masterpage.html" %} {% block title %}Admin Control{% endblock %}
+
+{% block content %}
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+            <div>
+                <input checked="" value="carousel_slide_1" name="target_selection" type="radio" id="carousel_slide_1">
+                <label for="carousel_slide_1"><span>Carousel Slide 1</span></label>
+
+                <input value="carousel_slide_2" name="target_selection" type="radio" id="carousel_slide_2">
+                <label for="carousel_slide_2"><span></span>Carousel Slide 2</label>
+
+                <input value="carousel_slide_3" name="target_selection" type="radio" id="carousel_slide_3">
+                <label for="carousel_slide_3"><span></span>Carousel Slide 3</label>
+            </div>
+
+            <input id="upload_file_btn" type="file" name="file" hidden>
+            <label class="upload-btn-design" for="upload_file_btn">Choose File</label>
+
+            <button type="submit" class="submit" id="upload_photo_btn" hidden></button>
+            <label class="upload_photo_design" for="upload_photo_btn">Upload</label>
+        </form>
+    </div>
+{% endblock %}

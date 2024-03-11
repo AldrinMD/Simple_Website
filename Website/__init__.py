@@ -17,11 +17,13 @@ def initialize_app():
 
     from.views import views
     from.auth import auth
+    from.admin_views import admin_views
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(admin_views, url_prefix='/')
 
-    from .models import User
+    from .models import User, Upload_Image
 
     create_database(app)
 
@@ -40,3 +42,4 @@ def create_database(app):
         with app.app_context():
             database.create_all()
         print('Created Database')
+    
