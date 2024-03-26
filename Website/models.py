@@ -8,9 +8,10 @@ class User(database.Model, UserMixin):
     last_name = database.Column(database.String(150))
     password = database.Column(database.String(150))
 
-class Upload_Image(database.Model):
+class Upload_About_Image(database.Model):
     id = database.Column(database.Integer, primary_key = True)
     filename = database.Column(database.String(50))
+    text = database.Column(database.String(150))
     data_type = database.Column(database.String(50))
     target = database.Column(database.String(150))
     image_dir = database.Column(database.String(150))

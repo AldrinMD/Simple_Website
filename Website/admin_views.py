@@ -1,5 +1,5 @@
 from flask import request, Blueprint, render_template, flash
-from .models import Upload_Image
+from .models import Upload_About_Image
 from . import database
 import os
 
@@ -14,8 +14,9 @@ def admin_control():
 
         if file != '':
             end_point = 'static'
+            text = ""
             
-            if target_action == "carousel_slide_1" or target_action == "carousel_slide_2" or target_action == "carousel_slide_3":
+            if target_action == "carousel_slide":
                 end_point = os.path.join(end_point, 'resources\carousel_img')
 
             current_dir = os.path.abspath(os.getcwd())
@@ -23,7 +24,7 @@ def admin_control():
             root_folder_path = os.path.join(root_folder_path, end_point)
 
             file.save(os.path.join(root_folder_path, file.filename))
-            upload = Upload_Image(filename=file.filename, data_type=file.mimetype, target=target_action, image_dir=os.path.join(end_point, file.filename))
+            upload = Upload_About_Image(filename=file.filename, text = text, data_type=file.mimetype, target=target_action, image_dir=os.path.join(end_point, file.filename))
             database.session.add(upload)
             database.session.commit()
 

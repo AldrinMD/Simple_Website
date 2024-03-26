@@ -1,16 +1,16 @@
 from flask import Blueprint, render_template, request,flash
-from .models import Upload_Image
+from .models import Upload_About_Image
 
 
 views = Blueprint('views', __name__)
 
-@views.route('/', methods=['GET'])
-def home():
+@views.route('/about', methods=['GET'])
+def about():
     if request.method == 'GET':
-        images = Upload_Image.query.filter_by(target = 'carousel_slide_1').first()
+        images = Upload_About_Image.query.filter(Upload_About_Image.target == 'carousel_slide').all()
 
         # User is the name of table that has a column name
         # users = User.query.all()
+        #flash(images, category='error')
 
-
-    return render_template("homepage.html", image=images)
+    return render_template("about.html", image=images)

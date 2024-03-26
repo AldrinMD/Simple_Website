@@ -1,0 +1,97 @@
+{% extends "masterpage.html" %} {% block title %}About{% endblock %}
+
+{% block content %}
+
+
+<div id="homepage_slide" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      {% if image != "" %}
+        {% for images in image %}
+
+          <div class="carousel-item {% if loop.index == 1 %} active {% endif %} custom-carousel-item" id="slide{{ loop.index }}" >
+            <img src="{{ images.image_dir }}" class="d-block w-100 custom-carousel-img" alt="slide {{ loop.index }}"> 
+          </div>
+
+        {% endfor %}
+      {% endif %}
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homepage_slide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homepage_slide" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container custom-spacer"></div>
+
+<div class="d-flex justify-content-start">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            <img src="static\resources\carousel_img\example_img1.JPG" class="img-fluid rounded-start custom-card-img" alt="card 1">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="static\resources\carousel_img\example_img2.JPG" class="img-fluid rounded-start custom-card-img" alt="card 2">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-end">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="static\resources\carousel_img\example_img3.JPG" class="img-fluid rounded-start custom-card-img" alt="card 3">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+      2 days ago
+    </div>
+</div>
+
+{% endblock %}

@@ -4,14 +4,18 @@
     <div>
         <form method="POST" enctype="multipart/form-data">
             <div>
-                <input checked="" value="carousel_slide_1" name="target_selection" type="radio" id="carousel_slide_1">
-                <label for="carousel_slide_1"><span>Carousel Slide 1</span></label>
+                <input checked="" value="carousel_slide" name="target_selection" type="radio" id="carousel_slide" onclick="javascript:target_selection_onclick();">
+                <label for="carousel_slide"><span>Carousel Slide</span></label>
 
-                <input value="carousel_slide_2" name="target_selection" type="radio" id="carousel_slide_2">
-                <label for="carousel_slide_2"><span></span>Carousel Slide 2</label>
+                <input value="Test1" name="target_selection" type="radio" id="Test1" onclick="javascript:target_selection_onclick();">
+                <label for="Test1"><span></span>Test1</label>
 
-                <input value="carousel_slide_3" name="target_selection" type="radio" id="carousel_slide_3">
-                <label for="carousel_slide_3"><span></span>Carousel Slide 3</label>
+                <input value="Test2" name="target_selection" type="radio" id="Test2" onclick="javascript:target_selection_onclick();">
+                <label for="Test2"><span></span>Test2</label>
+            </div>
+            
+            <div id="not_carousel" style="display:none">
+                Test input <input type='text' id='test_text' name='test_text' placeholder="test_text"><br>
             </div>
 
             <input id="upload_file_btn" type="file" name="file" hidden>
@@ -21,4 +25,6 @@
             <label class="upload_photo_design" for="upload_photo_btn">Upload</label>
         </form>
     </div>
+
 {% endblock %}
+
