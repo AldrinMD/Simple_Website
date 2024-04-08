@@ -7,22 +7,38 @@
                 <input checked="" value="carousel_slide" name="target_selection" type="radio" id="carousel_slide" onclick="javascript:target_selection_onclick();">
                 <label for="carousel_slide"><span>Carousel Slide</span></label>
 
-                <input value="Test1" name="target_selection" type="radio" id="Test1" onclick="javascript:target_selection_onclick();">
-                <label for="Test1"><span></span>Test1</label>
+                <input value="cards_image" name="target_selection" type="radio" id="cards_image" onclick="javascript:target_selection_onclick();">
+                <label for="cards_image"><span>Cards Image</span></label>
 
                 <input value="Test2" name="target_selection" type="radio" id="Test2" onclick="javascript:target_selection_onclick();">
-                <label for="Test2"><span></span>Test2</label>
+                <label for="Test2"><span>Test2</span></label>
             </div>
             
-            <div id="not_carousel" style="display:none">
-                Test input <input type='text' id='test_text' name='test_text' placeholder="test_text"><br>
+            <div id="cards_selection" style="display:none">
+                <label for="card_position"><span>Please select card position: </span></label>
+                <select name="card_position" id="card_position">
+                    <option value="card_1">Card 1</option>
+                    <option value="card_2">Card 2</option>
+                    <option value="card_3">Card 3</option>
+                </select>
             </div>
 
-            <input id="upload_file_btn" type="file" name="file" hidden>
-            <label class="upload-btn-design" for="upload_file_btn">Choose File</label>
+            <div id="not_carousel" style="display:none">
+                <label for="content_text"><span>Please enter message: </span></label> <br>
+                <textarea id="content_text" name="content_text" rows="4" cols="50"></textarea>
+            </div>
 
-            <button type="submit" class="submit" id="upload_photo_btn" hidden></button>
-            <label class="upload_photo_design" for="upload_photo_btn">Upload</label>
+            <div>
+                <label for="upload_file_btn"><span id="selected_image">No image selected</span></label> <br>
+                <img id="test_image" src=""> <br>
+                <input id="upload_file_btn" type="file" name="file" hidden>
+                <label class="upload-btn-design" for="upload_file_btn">Choose File</label>
+    
+                <button type="submit" class="submit" id="upload_photo_btn" hidden></button>
+                <label class="upload_photo_design" for="upload_photo_btn">Upload</label>
+            </div>
+
+
         </form>
     </div>
 

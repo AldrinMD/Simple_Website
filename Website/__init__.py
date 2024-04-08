@@ -23,7 +23,7 @@ def initialize_app():
     app.register_blueprint(auth, url_prefix='/')
     app.register_blueprint(admin_views, url_prefix='/')
 
-    from .models import User, Upload_About_Image
+    from .models import User, Upload_About_Carousel_Image, Upload_About_Cards_Image
 
     create_database(app)
 
